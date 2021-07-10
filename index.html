@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Document</title>
+</head>
+<body>
+  <div class="container ">
+
+    <h2 class="bold">Stół:</h2>
+    <div id="board" class="row">
+        <div id="card1" class="col-sm-6 col-12"></div>
+        <div id="card2" class="col-sm-6 col-12"></div>
+        <div id="card3" class="col-sm-6"></div>
+        <div id="card4" class="col-sm-6"></div>
+        <div id="card5" class="col-sm-6"></div>
+      </div>
+   </div>
+   
+   <hr>
+      <div id="playerCards">
+        
+        <p class="bold">Twoje karty</p>
+        <div id="playerCard1"></div>
+        <div id="playerCard2"></div>
+        
+        </div>
+        <div id="cpuCards btnDiv">
+          <hr class="mt-5">
+          <p class="bold">Karty CPU</p>
+          <div id="cpuCard1"></div>
+          <div id="cpuCard2"></div>
+          
+        </div>
+      </div> 
+      <div class="container ">
+      <div class="btnDiv">
+        
+
+          <button class="btn btn-danger show" onclick="javascript: nextStep(this);">Odkryj 3 karty</button>
+
+
+          <button type="button" class="btn btn-danger help" data-toggle="modal" data-target="#myModal"> Pomoc</button>
+        </div>
+      </div>
+    </div>
+      <div class="container ">
+
+        
+      
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+            
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Możliwe układy kart</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              
+              <!-- Modal body -->
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-4">Poker królewski</div>
+                    <div class="col-8"><img src="img/Royal_Flush.png" alt=""></div>
+                  </div>
+                  <div class="row">
+                    <p>Poker złożony z kart od asa do dziesiątki. </p>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">Poker</div>
+                    <div class="col-8"><img src="img/Straight_Flush.png" alt=""></div>
+                  </div>
+                  <div class="row">
+                    <p>Strit w kolorze</p>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">Kareta</div>
+                    <div class="col-8"><img src="img/Kareta.png" alt=""></div>
+                  </div>
+                  <div class="row">
+                    <p>Cztery karty o tej samej wartości.</p>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">Full</div>
+                    <div class="col-8"><img src="img/Full.png" alt=""></div>
+                  </div>
+                  <div class="row">
+                    <p>Układ składający się z trójki i pary.</p>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">Kolor</div>
+                    <div class="col-8"><img src="img/Flush.png" alt=""></div>
+                  </div>
+                  <div class="row">
+                    <p>Pięć kart w tym samym kolorze, nienastępujących po sobie.</p>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">Strit</div>
+                    <div class="col-8"><img src="img/Straight.png" alt=""></div>
+                  </div>
+                  <div class="row">
+                    <p>Pięć kart następujących po sobie, przy czym co najmniej jedna musi być w innym kolorze.</p>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">Trójka</div>
+                    <div class="col-8"><img src="img/Three_of_a_kind.png" alt=""></div>
+                  </div>
+                  <div class="row">
+                    <p>Trzy karty tej samej wartości.</p>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">Dwie pary</div>
+                    <div class="col-8"><img src="img/Two_Pairs.png" alt=""></div>
+                  </div>
+                  <div class="row">
+                    <p>Układ składający się z dwóch różnych par</p>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">Para</div>
+                    <div class="col-8"><img src="img/One_Pair.png" alt=""></div>
+                  </div>
+                  <div class="row">
+                    <p>Dwie karty o takiej samej wartości.</p>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">Wysoka karta</div>
+                    <div class="col-8"><img src="img/No_Pair.png" alt=""></div>
+                  </div>
+                  <div class="row">
+                    <p>Żaden z powyższych układów</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Zamknij</button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    <script src="script/hold.js"></script>
+    <script src="script/karta.js"></script>
+    <script src="script/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+body {
+    padding: 20px;
+    color: #000000;
+    font-family: arial;
+    /* background-color: #FFD662; */
+    background: rgb(250, 222, 36);
+    background: linear-gradient(90deg, rgba(250, 222, 36, 1) 0%, rgba(247, 252, 0, 1) 35%, rgba(255, 226, 0, 1) 100%);
+}
+
+#board,
+#playerCards {
+    display: block;
+    clear: both;
+    width: 100%;
+    min-height: 240px;
+}
+
+#cpuCards {
+
+    display: block;
+    clear: both;
+    width: 100%;
+    min-height: 240px;
+}
+
+.card {
+    box-sizing: border-box;
+    width: 150px;
+    height: 214px;
+    margin: 10px;
+    float: left;
+    background-color: white;
+    background-image: url('img/deck.png');
+    background-position-x: 0px;
+    background-position-y: center;
+    background-repeat: none;
+    background-position: middle center;
+    border: 1px #555555 solid;
+    border-radius: 10px;
+    -webkit-box-shadow: 2px 2px 3px 0px #000000;
+    box-shadow: 2px 2px 3px 0px #000000;
+}
+
+hr {
+    margin: 10px;
+    display: block;
+    width: 100%;
+    border-top: 1px solid grey;
+}
+
+.action {
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    margin: 20px;
+    border-radius: 5px;
+
+}
+
+.bold {
+    font-weight: bold;
+    color: black;
+}
+
+.btnDiv {
+    margin: 0;
+    padding: 150px;
+    position: relative;
+
+}
+
+.show {
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+
+
+}
+
+.help {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+
+
+}
